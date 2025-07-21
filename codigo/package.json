@@ -1,0 +1,9 @@
+{
+  "name": "maqfer-site",
+  "version": "1.0.0",
+  "description": "Site institucional da Maqfer",
+  "scripts": {
+  "start": "start site.html"
+},
+  "author": "gab alves"
+}
