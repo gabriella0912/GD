@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
-                element.textContent = target + (target === 500 ? '+' : target === 15 ? '' : '+');
+                element.textContent = target + (target === 90 ? '+' : target === 22 ? '' : '+');
                 clearInterval(timer);
             } else {
-                element.textContent = Math.floor(current) + (target === 500 ? '+' : target === 15 ? '' : '+');
+                element.textContent = Math.floor(current) + (target === 90 ? '+' : target === 22 ? '' : '+');
             }
         }, 20);
     }
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 const statNumbers = entry.target.querySelectorAll('.stat-number');
                 statNumbers.forEach((stat, index) => {
-                    const targets = [500, 15, 1000];
+                    const targets = [90, 22, 100];
                     animateCounter(stat, targets[index]);
                 });
                 statsObserver.unobserve(entry.target);
