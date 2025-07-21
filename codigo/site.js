@@ -155,7 +155,7 @@ style.textContent = `
             top: 100%;
             left: 0;
             width: 100%;
-            background: white;
+            background: #111827;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             padding: 1rem 0;
         }
