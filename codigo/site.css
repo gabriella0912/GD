@@ -318,6 +318,16 @@ body {
     gap: 1rem;
 }
 
+.social-links a i {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover i {
+    color: #16e4b9;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
