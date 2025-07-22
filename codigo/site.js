@@ -180,3 +180,43 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Adiciona efeito hover nos cards de benefícios
+document.addEventListener('DOMContentLoaded', () => {
+    const benefitCards = document.querySelectorAll('.benefit-card');
+    
+    benefitCards.forEach((card, index) => {
+        // Adiciona delay na animação inicial
+        card.style.animationDelay = `${index * 0.2}s`;
+        
+        // Efeitos de hover
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-8px) scale(1.02)';
+            card.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Animação quando os cards entram na tela
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+    
+    benefitCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+    });
+});
