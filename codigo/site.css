@@ -33,6 +33,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* logo | menu | ícones */
+    align-items: center;
 }
 
 
@@ -54,6 +57,12 @@ body {
     color: #ffffff;
     font-weight: 500;
     transition: color 0.3s ease;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    flex: 1;
+    justify-content:center;
 }
 
 .nav-list a:hover {
@@ -79,8 +88,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(68, 68, 68, 0.6)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23374151" width="1200" height="600"/><circle cx="200" cy="150" r="50" fill="%2322c55e" opacity="0.1"/><circle cx="800" cy="400" r="80" fill="%2322c55e" opacity="0.1"/><rect x="100" y="200" width="200" height="100" fill="%23666" opacity="0.3"/><rect x="900" y="100" width="150" height="200" fill="%23666" opacity="0.3"/></svg>');
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(68, 68, 68, 0.6)), url('logos/fundo.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -129,7 +137,7 @@ body {
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
-    border-radius: 50px;
+    border-radius: 8px; /* antes: 50px → agora: 8px para formato retangular */
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(33, 225, 164, 0.3);
@@ -208,8 +216,9 @@ body {
 .trust {
     padding: 5rem 0;
     background: #1f2937;
-    color: white;
+    color: rgb(17, 49, 95);
     text-align: center;
+    background-color: whitesmoke;
 }
 
 .trust-content h2 {
@@ -238,7 +247,8 @@ body {
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #16e4b9;
+    color: #00cb9f;
+    text-shadow: 1.5px 1.5px 2px rgba(34, 197, 94, 0.2);
 }
 
 .stat-label {
@@ -425,30 +435,34 @@ body {
 /* Seção de Benefícios */
 .benefits-section {
     padding: 80px 0;
-    background-color: #ffffff;
+    background-color: whitesmoke;
 }
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* reduz o mínimo de largura */
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1500px; /* opcional: limitar a largura total da grade */
+    margin: 0 auto;
 }
 
 .benefit-card {
-    text-align: center;
-    padding: 30px 25px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.5));
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
     border-radius: 16px;
-    border: 1px solid rgba(200, 200, 200, 0.3);
-    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 250px;  /* limita o tamanho de cada card individualmente */
+    margin: 0 auto;
+    background-color: white;
 }
 
 .benefit-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    background:#00cb9f;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -537,4 +551,49 @@ body {
     .benefit-card h3 {
         font-size: 1.2rem;
     }
+}
+
+/* adição */
+.header-icons {
+    vertical-align: top;
+    position: absolute;
+    top: 20px; /* distância do topo */
+    right: 20px; /* distância da direita */
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-icons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #16e4b9;
+    transition: color 0.3s ease;
+}
+
+.header-icons button:hover,
+.cart-icon:hover {
+    color: white;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    color: #16e4b9;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
 }

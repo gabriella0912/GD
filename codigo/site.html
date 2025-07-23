@@ -9,8 +9,65 @@
     <link rel="stylesheet" href="site.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+
 </head>
 <body>
+    <!-- login -->
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        
+        <div id="login-form-container" class="form-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Entrar</button>
+            <p class="switch-form">
+            Não tem conta? <a href="#" id="show-register">Cadastre-se</a>
+            </p>
+        </form>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div id="register-form-container" class="form-container hidden">
+        <h2>Cadastro</h2>
+        <form id="register-form">
+            <div class="form-group">
+            <label for="reg-name">Nome Completo</label>
+            <input type="text" id="reg-name" name="name" required>
+            </div>
+            <div class="form-group">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" name="email" required>
+            </div>
+            <div class="form-group">
+            <label for="reg-password">Senha</label>
+            <input type="password" id="reg-password" name="password" required minlength="6">
+            </div>
+            <div class="form-group">
+            <label for="reg-confirm-password">Confirmar Senha</label>
+            <input type="password" id="reg-confirm-password" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="submit-btn">Cadastrar</button>
+            <p class="switch-form">
+            Já tem conta? <a href="#" id="show-login">Faça login</a>
+            </p>
+        </form>
+        </div>
+    </div>
+    </div>
+        <!-- fim login -->
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -25,11 +82,23 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <!-- Minha Conta + Carrinho -->
+                <div class="header-icons">
+                    <button id="openLogin" title="Minha Conta">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="cart-icon" title="Carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -66,63 +135,63 @@
                     </div>
                 </div>
             </div>
+                <!-- Seção de Benefícios -->
+                <section class="benefits-section">
+                    <div class="container">
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Qualidade Garantida</h3>
+                                <p>Produtos certificados com garantia de qualidade</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="8" r="7" stroke="white" stroke-width="2"/>
+                                        <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Referência no Mercado</h3>
+                                <p>Mais de 20 anos de experiência no setor</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Atendimento Especializado</h3>
+                                <p>Equipe técnica qualificada para orientar você</p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="1" y="3" width="15" height="13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M16 8L20 12L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 12H9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3>Entrega em Todo Brasil</h3>
+                                <p>Logística eficiente para atender todo o país</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
         </div>
     </section>
 
-    <!-- Seção de Benefícios -->
-    <section class="benefits-section">
-        <div class="container">
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Qualidade Garantida</h3>
-                    <p>Produtos certificados com garantia de qualidade</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="8" r="7" stroke="white" stroke-width="2"/>
-                            <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Referência no Mercado</h3>
-                    <p>Mais de 20 anos de experiência no setor</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Atendimento Especializado</h3>
-                    <p>Equipe técnica qualificada para orientar você</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="1" y="3" width="15" height="13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 8L20 12L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M21 12H9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3>Entrega em Todo Brasil</h3>
-                    <p>Logística eficiente para atender todo o país</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
 
     <!-- Products Section -->
     <section id="produtos" class="products">
