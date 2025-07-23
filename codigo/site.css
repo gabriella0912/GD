@@ -295,12 +295,11 @@ body {
     max-height: 60px;
     object-fit: contain;
     filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 .partner-logo:hover img {
     filter: none;
-    transform: scale(1.05);
 }
 
 
