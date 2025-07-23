@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqfer - Ferramentas para o Setor Moveleiro</title>
+    <meta name="description" content="Especialistas em brocas, serras, facas e acessórios para seccionadoras e máquinas de fabricação de móveis">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="brocas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+               <img src="logos/logo.png" alt="MAQFER - Logo">
+            </div> 
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="site.html#">Início</a></li>
+                    <li><a href="site.html#produtos">Produtos</a></li>
+                    <li><a href="site.html#sobre">Sobre a MAQFER</a></li>
+                    <li><a href="site.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <!-- Minha Conta + Carrinho -->
+            <div class="header-icons">
+                <button id="openLogin" title="Minha Conta">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="cart-icon" title="Carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Principal de Produtos -->
+    <main class="produtos-section">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="section-header">
+                <p class="section-subtitle"><br></p>
+                <h1 class="section-title">Brocas</h1>
+                <p class="section-subtitle">Brocas de alta precisão para móveis</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-container">
+                <h3 class="filtros-title">Filtrar por tamanho:</h3>
+                <div class="filtros-buttons">
+                    <button class="filtro-btn active" data-size="todos">Todos</button>
+                    <button class="filtro-btn" data-size="8mm">8mm</button>
+                    <button class="filtro-btn" data-size="10mm">10mm</button>
+                    <button class="filtro-btn" data-size="12mm">12mm</button>
+                    <button class="filtro-btn" data-size="15mm">15mm</button>
+                </div>
+            </div>
+
+            <!-- Contador de Produtos -->
+            <div class="produtos-counter">
+                <span id="produtos-count">4</span> produtos encontrados
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="produtos-grid" id="produtos-grid">
+                <!-- Produto 1 - 8mm -->
+                <div class="produto-card" data-size="8mm">
+                    <div class="produto-image">
+                        <div class="size-badge">8mm</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Broca Helicoidal 8mm</h3>
+                        <p class="produto-description">Broca helicoidal de alta precisão para furos em madeira e derivados. Ideal para móveis...</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 45,90</span>
+                            <span class="estoque">25 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Ver detalhes
+                            </button>
+                            <button class="btn-comprar" onclick="adicionarAoCarrinho('8mm', 'Broca Helicoidal 8mm', 45.90)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" fill="currentColor"/>
+                                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" fill="currentColor"/>
+                                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 - 10mm -->
+                <div class="produto-card" data-size="10mm">
+                    <div class="produto-image">
+                        <div class="size-badge">10mm</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Broca Helicoidal 10mm</h3>
+                        <p class="produto-description">Broca helicoidal de alta precisão para furos em madeira e derivados. Ideal para móveis...</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 52,90</span>
+                            <span class="estoque">30 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Ver detalhes
+                            </button>
+                            <button class="btn-comprar" onclick="adicionarAoCarrinho('10mm', 'Broca Helicoidal 10mm', 52.90)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" fill="currentColor"/>
+                                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" fill="currentColor"/>
+                                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 - 12mm -->
+                <div class="produto-card" data-size="12mm">
+                    <div class="produto-image">
+                        <div class="size-badge">12mm</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Broca Helicoidal 12mm</h3>
+                        <p class="produto-description">Broca helicoidal de alta precisão para furos em madeira e derivados. Ideal para móveis...</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 65,90</span>
+                            <span class="estoque">20 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Ver detalhes
+                            </button>
+                            <button class="btn-comprar" onclick="adicionarAoCarrinho('12mm', 'Broca Helicoidal 12mm', 65.90)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" fill="currentColor"/>
+                                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" fill="currentColor"/>
+                                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 - 15mm -->
+                <div class="produto-card" data-size="15mm">
+                    <div class="produto-image">
+                        <div class="size-badge">15mm</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Broca Helicoidal 15mm</h3>
+                        <p class="produto-description">Broca helicoidal de alta precisão para furos em madeira e derivados. Ideal para móveis...</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 78,90</span>
+                            <span class="estoque">15 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                Ver detalhes
+                            </button>
+                            <button class="btn-comprar" onclick="adicionarAoCarrinho('15mm', 'Broca Helicoidal 15mm', 78.90)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" fill="currentColor"/>
+                                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" fill="currentColor"/>
+                                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                                Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Confirmação -->
+    <div id="modal-carrinho" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+            <div class="form-container">
+                <h2>✅ Produto Adicionado!</h2>
+                <div class="produto-adicionado">
+                    <div id="produto-info"></div>
+                    <div class="modal-actions">
+                        <button class="submit-btn" onclick="irParaCarrinho()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" fill="currentColor"/>
+                                <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" fill="currentColor"/>
+                                <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            Ir para o Carrinho
+                        </button>
+                        <button class="btn-continuar" onclick="fecharModal()">Continuar Comprando</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MAQFER</h3>
+                    <p>Especialistas em ferramentas para o setor moveleiro, oferecendo qualidade e tecnologia de ponta a mais de 22 anos.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maqfer" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/maqfer" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/maqfer" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>(31) 3432-6309</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>maqferecia@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Rua Aquirino de Souza, 75<br>Belo Horizonte - MG, 01234-567</span>
+                    </div>
+                </div>
+                <!-- Products -->
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <div class="footer-links">
+                        <a href="#">Brocas</a>
+                        <a href="#">Serras</a>
+                        <a href="#">Facas Industriais</a>
+                        <a href="#">Acessórios</a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="site.html">Início</a>
+                        <a href="site.html#produtos">Produtos</a>
+                        <a href="site.html#sobre">Sobre a Maqfer</a>
+                        <a href="site.html#contato">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAQFER. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script src="brocas.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
