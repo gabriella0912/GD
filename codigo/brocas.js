@@ -228,3 +228,22 @@ function debugCarrinho() {
         currency: 'BRL'
     }));
 }
+
+document.getElementById('link-inicio').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'site.html#inicio';
+});
+document.getElementById('link-produtos').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'site.html#produtos';
+});
+
+document.getElementById('link-sobre').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'site.html#sobre';
+});
+
+document.getElementById('link-contato').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'site.html#contato';
+});

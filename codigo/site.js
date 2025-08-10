@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Click handlers para botões de produtos
-    const productBtns = document.querySelectorAll('.product-btn');
+    /*const productBtns = document.querySelectorAll('.product-btn');
     productBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const productName = this.parentElement.querySelector('h3').textContent;
             alert(`Você clicou em "${productName}". Aqui você pode implementar a navegação para a página específica do produto.`);
         });
-    });
+    }); */
     
     // Parallax effect no hero
     window.addEventListener('scroll', function() {
