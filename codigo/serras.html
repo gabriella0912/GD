@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maqfer - Ferramentas para o Setor Moveleiro</title>
+    <meta name="description" content="Especialistas em serras, facas e acessórios para seccionadoras e máquinas de fabricação de móveis" />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="brocas.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="logos/logo.png" alt="MAQFER - Logo" />
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" id="link-inicio">Início</a></li>
+                    <li><a href="#" id="link-produtos">Produtos</a></li>
+                    <li><a href="#" id="link-sobre">Sobre a MAQFER</a></li>
+                    <li><a href="#" id="link-contato">Contato</a></li>
+                </ul>
+            </nav>
+            <!-- Ícones (sem ação JS) -->
+            <div class="header-icons">
+                <button title="Minha Conta" disabled>
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="cart-icon" title="Carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" disabled>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Principal de Produtos -->
+    <main class="produtos-section">
+        <div class="container">
+            <!-- Cabeçalho da Seção -->
+            <div class="section-header">
+                <h1 class="section-title">Serras</h1>
+                <p class="section-subtitle">Serras de alta performance para móveis</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-container">
+                <h3 class="filtros-title">Filtrar por tipo:</h3>
+                <div class="filtros-buttons">
+                    <button class="filtro-btn active" type="button" disabled>Todos</button>
+                    <button class="filtro-btn" type="button" disabled>Serra Circular</button>
+                    <button class="filtro-btn" type="button" disabled>Serra Fita</button>
+                    <button class="filtro-btn" type="button" disabled>Serra Copo</button>
+                    <button class="filtro-btn" type="button" disabled>Serra Tico-Tico</button>
+                </div>
+            </div>
+
+            <!-- Contador de Produtos -->
+            <div class="produtos-counter">
+                <span id="produtos-count">4</span> produtos encontrados
+            </div>
+
+            <!-- Grid de Produtos -->
+            <div class="produtos-grid" id="produtos-grid">
+                <!-- Produto 1 - Serra Circular -->
+                <div class="produto-card" data-type="serra-circular">
+                    <div class="produto-image">
+                        <div class="size-badge">Serra Circular</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Serra Circular 7.25 polegadas</h3>
+                        <p class="produto-description">Serra circular potente para cortes precisos em madeira, ideal para móveis.</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 320,90</span>
+                            <span class="estoque">12 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes" type="button" disabled>
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            <button class="btn-comprar" type="button" disabled>
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 - Serra Fita -->
+                <div class="produto-card" data-type="serra-fita">
+                    <div class="produto-image">
+                        <div class="size-badge">Serra Fita</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Serra Fita Industrial</h3>
+                        <p class="produto-description">Serra fita para cortes curvos e retos em materiais diversos.</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 850,00</span>
+                            <span class="estoque">8 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes" type="button" disabled>
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            <button class="btn-comprar" type="button" disabled>
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 - Serra Copo -->
+                <div class="produto-card" data-type="serra-copo">
+                    <div class="produto-image">
+                        <div class="size-badge">Serra Copo</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Kit Serra Copo 6 peças</h3>
+                        <p class="produto-description">Conjunto de serras copo para perfuração em madeira, metal e plástico.</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 120,00</span>
+                            <span class="estoque">20 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes" type="button" disabled>
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            <button class="btn-comprar" type="button" disabled>
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 - Serra Tico-Tico -->
+                <div class="produto-card" data-type="serra-tico-tico">
+                    <div class="produto-image">
+                        <div class="size-badge">Serra Tico-Tico</div>
+                        <div class="produto-placeholder"></div>
+                    </div>
+                    <div class="produto-info">
+                        <h3 class="produto-title">Serra Tico-Tico 400W</h3>
+                        <p class="produto-description">Serra tico-tico leve e versátil para cortes detalhados.</p>
+                        <div class="produto-preco">
+                            <span class="preco">R$ 280,50</span>
+                            <span class="estoque">18 em estoque</span>
+                        </div>
+                        <div class="produto-actions">
+                            <button class="btn-detalhes" type="button" disabled>
+                                <i class="fas fa-eye"></i> Ver detalhes
+                            </button>
+                            <button class="btn-comprar" type="button" disabled>
+                                <i class="fas fa-shopping-cart"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MAQFER</h3>
+                    <p>Especialistas em ferramentas para o setor moveleiro, oferecendo qualidade e tecnologia de ponta a mais de 22 anos.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/maqfer" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/maqfer" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/maqfer" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-item"><span class="contact-icon">📞</span><span>(31) 3432-6309</span></div>
+                    <div class="contact-item"><span class="contact-icon">📧</span><span>maqferecia@gmail.com</span></div>
+                    <div class="contact-item"><span class="contact-icon">📍</span><span>Rua Aquirino de Souza, 75<br />Belo Horizonte - MG, 01234-567</span></div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <div class="footer-links">
+                        <a href="#">Brocas</a>
+                        <a href="#">Serras</a>
+                        <a href="#">Facas Industriais</a>
+                        <a href="#">Acessórios</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <div class="footer-links">
+                        <a href="site.html">Início</a>
+                        <a href="site.html#produtos">Produtos</a>
+                        <a href="site.html#sobre">Sobre a Maqfer</a>
+                        <a href="site.html#contato">Contato</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAQFER. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site.js"></script>
+    <script src="serras.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
